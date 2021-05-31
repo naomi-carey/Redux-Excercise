@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
+  const counter = useSelector((state) => state.counter);
   return (
     <div>
-      <h1>Counter: {counter}</h1>
-      <button onClick={() => setCounter((addOne) => addOne + 1)}>
-        Increment
-      </button>
-      <button onClick={() => setCounter((minusOne) => minusOne - 1)}>
-        Decrement
-      </button>
+      <h1>Counter:{counter}</h1>
+      <button>Increment</button>
     </div>
   );
 }
